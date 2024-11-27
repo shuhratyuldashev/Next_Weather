@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+*{
+    --color-gray: #666666;
+    --color-dark: #333333;
+    --color-dark-blue: #0F1D3B;
+    --color-blue: #16294E;
+    --color-light-blue: #5A8DEE;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}.Lading {
+    box-sizing: border-box;
+    background-color: #FCFCFC;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+.Lading .Header{
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid;
+    box-shadow: 0px 5px 15px #3333337f;
+}.Lading .Header h1{
+    font-family: "Ubuntu", sans-serif;
+    font-size: 50px;
+    color: var(--color-gray);
+}.Lading .Header h1 span{
+    color: var(--color-dark);
+}
+
+.Lading .Header .Search-bar{
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    background-color: #D9D9D9;
+    height: 40px;
+    border-radius: 16px
+}.Lading .Header .Search-bar button{
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    margin-left: 10px;
+}.Lading .Header .Search-bar input{
+    height: 100%;
+    border: none;
+    background: none;
+    outline: none;
+    font-family: "Work Sans", sans-serif;
+    margin-left: 5px;
+    font-size: 18px;
+    font-weight: 700;
+}.Lading .Header .Search-bar input::placeholder{
+    color: #666666;
+}
+
+.clear-history{
+    padding: 5px;
+    display: flex;
+    justify-content: end;
+}.clear-history button{
+    padding: 4px 16px;
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    border: none;
+    background: none;
+    font-size: 22px;
+}
+.Lading .Cards{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}.Lading .Cards .Card {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    border-bottom: 2px solid var(--color-gray);
+    background-color: #D9D9D9;
+}.Lading .Cards .Card:nth-child(2n){
+    background: none;
+}.Lading .Cards .Card p{
+    font-family: 'Ubuntu', 'sans-serif';
+    font-size: 20px;
+    font-weight: 800;
+}.Lading .Cards .Card span{
+    margin-left: auto;
+    padding: 0px 20px;
+    font-family: 'Work Sans';
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+
+
+
+.Lading .Empty-Cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Ubuntu';
+    font-weight: 600;
+    color: var(--color-gray);
+    font-size: 20px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+
+
+
+
+.Not-found{
+    text-align: center;
+    margin-top: 30vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}.Not-found h1{
+    font-family: 'Work Sans';
+    color: var(--color-gray);
+    font-size: 150px;
+}.Not-found p{
+    font-family: 'Ubuntu';
+    font-size: 20px;
+    color: var(--color-gray);
+    font-weight: 600;
+}.Not-found .Link{
+    color: var(--color-light-blue);    
+}
+
+
+
+
+
+.info-modal{
+    background-color: #D9D9D9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}.info-modal .header-modal{
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    width: 100%;
+    border-bottom: 1px solid;
+    box-shadow: 0px 5px 15px #3333337f;
+}.info-modal .header-modal button{
+    border: none;
+    background: none;
+}.info-modal .header-modal p{
+    margin: 0 auto;
+    transform: translateX(-25%);
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    font-size: 18px;
+}
+
+
+.info-modal .main{
+    margin-top: 50px;
+    padding: 20px
+}.info-modal .main .weather{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}.info-modal .main .weather p, .temperature p{
+    font-family: "Ubuntu";
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--color-blue);
+}.info-modal .main .weather b{
+    color: var(--color-dark-blue);
+    font-family: 'Roboto';
+    font-size: 22px;
+}.info-modal .main .temperature{
+    margin-top: 20px;
+}.info-modal .main .temperature h1{
+    color: var(--color-dark-blue);
+    font-size: 125px;
+    font-family: 'Roboto';
+    text-align: center;
+    margin: 10px auto;
+}
+
+
+.info-modal .main .weather-stats{
+    margin-top: 30px;
+    display: flex; 
+    justify-content: space-around;
+    padding: 30px;
+    border-radius: 16px;
+    background-color: var(--color-dark-blue);
+    color: #D9D9D9;
+}.info-modal .main .weather-stats .wind, .humidity, .visibility{
+    width: calc(100% / 3);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    justify-content: space-between;
+    text-align: center;
+    font-family: 'Ubuntu';
+}.info-modal .main .weather-stats .wind, .humidity{
+    border-right: 1px solid #D9D9D9;
+}.info-modal .main .weather-stats .wind p, .humidity p, .visibility p{
+    margin-top: 10px;
+}
+
+
+.info-modal .weatherDays{
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}.info-modal .weatherDays .weatherDay{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 30px;
+    border-bottom: 2px solid var(--color-dark);
+    width: 100%;
+}.info-modal .weatherDays .weatherDay p{
+    margin-right: auto;
+    gap: 10px;
+    font-family: 'Ubuntu';
+    font-weight: 700;
+    font-size: 20px;
+}.info-modal .weatherDays .weatherDay span{
+    font-family: 'Roboto';
+    font-size: 22px;
+    font-weight: 800;
+}
