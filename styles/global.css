@@ -176,6 +176,10 @@
     color: var(--color-dark-blue);
     font-family: 'Roboto';
     font-size: 22px;
+}.info-modal .main .weather img{
+    height: 75px;
+    padding: 0;
+    margin: 0;
 }.info-modal .main .temperature{
     margin-top: 20px;
 }.info-modal .main .temperature h1{
@@ -215,6 +219,7 @@
     margin-top: 25px;
     display: flex;
     flex-direction: column;
+    background-color: #D9D9D9;
     width: 100%;
 }.info-modal .weatherDays .weatherDay{
     display: flex;
@@ -234,4 +239,25 @@
     font-family: 'Roboto';
     font-size: 22px;
     font-weight: 800;
+}.info-modal .weatherDays .weatherDay img{
+    height: 60px;
+    padding: 0;
+    margin: 0;
+}
+
+
+.info-modal .info-error{
+    display: flex;
+    height: 70vh;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}.info-modal .info-error p{
+    font-size: 25px;
+    font-family: "Ubuntu";
+    color: var(--color-gray);
+    font-weight: 700;
+}.info-modal .info-error h1{
+    font-size: 125px;
 }
