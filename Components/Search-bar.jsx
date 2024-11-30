@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { addToHistory, toggleModal } from "@/store/weatherSlice";
 import { IoSearchOutline } from "react-icons/io5";
 import Information_modal from "@/Components/Information-modal";

@@ -8,9 +8,7 @@ export const fetchWeather = createAsyncThunk(
     const API_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=d0262df8a15f1faa47d59331be5bccd4&units=metric`;
     const response = await axios.get(API_URL);
     const data = response.data;
-    console.log(data)
     const days = data.list.filter((_, index) => index % 8 === 0); 
-    console.log(days)
     return { data, days };
   }
 );
