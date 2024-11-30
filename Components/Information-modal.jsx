@@ -1,21 +1,24 @@
-"use client";
+"use client"
 import React from "react";
+import { MdError } from "react-icons/md";
 import { IoCloseOutline } from "react-icons/io5";
 import Weather_Days from "./Weather-Days";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleModal } from "@/store/weatherSlice";
 
 const Information_modal = () => {
-  const nameCountry = useSelector((store) => store.data.weatherDays?.city.name);
-  const day = useSelector((store) => store.data.weatherDays?.list[0]);
+  const nameCountry = useSelector((store) => store.data.weatherDays?.data.city.name);
+  const day = useSelector((store) => store.data.weatherDays?.days[0]);
   const dispatch = useDispatch();
 
-  const [weather, temp, wind, humidity, visibility] = [
+
+  const [weather, temp, wind, humidity, visibility, icon ] = [
     day?.weather[0].main,
-    day?.main.temp,
+    Math.round(day?.main.temp),
     day?.wind.speed,
     day?.main.humidity,
     day?.visibility / 1000,
+    `http://openweathermap.org/img/wn/${day?.weather[0].icon}@2x.png`
   ];
 
   const handleModal = () => {
@@ -34,7 +37,10 @@ const Information_modal = () => {
           <div className="main">
             <div className="weather">
               <p>Weather:</p>
-              <b>{weather}</b>
+              <b>
+                {weather}
+              </b>
+              <img src={icon} alt="icon" />
             </div>
 
             <div className="temperature">
@@ -101,10 +107,22 @@ const Information_modal = () => {
               </div>
             </div>
           </div>
-          <Weather_Days />
+          <Weather_Days/>
         </div>
       ) : (
-        <div className="info-modal">Не найдено</div>
+        <div className="info-modal">
+            <div className="header-modal">
+            <button onClick={handleModal}>
+              <IoCloseOutline size={25} />
+            </button>
+          </div>
+          <div className="info-error">
+              <h1>
+                <MdError />
+              </h1>
+              <p>No results found or bad internet.</p>
+          </div>
+        </div>
       )}
     </>
   );

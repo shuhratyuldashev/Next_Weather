@@ -9,10 +9,12 @@ import { useSelector, useDispatch } from 'react-redux'
 const Cards = () => {
     const dispatch = useDispatch()
     const cardsHistory = useSelector(state => state.history.historys)
-
+   
     const clear = () => {
       dispatch(clearHistory())
     }
+
+    
     return (
       <section className='Cards'>
         <div className="clear-history">

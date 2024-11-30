@@ -11,14 +11,8 @@ const Search_bar = () => {
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState("");
-
   const isModal = useSelector((state) => state.history.modal);
-
   const date = new Date().toLocaleDateString("uz-UZ");
-
-  useEffect(() => {
-    dispatch(fetchWeather(title));
-  }, [title]);
 
   const addHistory = () => {
     if (title.trim().length !== 0) {
@@ -33,6 +27,7 @@ const Search_bar = () => {
       <button
         onClick={() => {
           addHistory();
+          dispatch(fetchWeather(title));
         }}
       >
         <IoSearchOutline size={25} />

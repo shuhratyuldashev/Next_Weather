@@ -1,21 +1,23 @@
-import React, {useEffect} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Weather_Day from './Weather-Day';
 
 const Weather_Days = () => {
-  const days = useSelector(store => store.data.weatherDays);
+  const daysWeather = useSelector(store => store.data.weatherDays?.days);
   return (
     <section className='weatherDays'>
-      {days?.list?.length ? (
-        days.list.map(day => {
-          const date = new Date(day.dt_txt); 
+      {daysWeather?.length ? ( 
+        daysWeather.map(day => {
+          const date = new Date(day.dt_txt);
           const formattedDate = date.toLocaleDateString();
-
+          
+          const icon = `http://openweathermap.org/img/wn/${day?.weather[0].icon}@2x.png`
           return (
             <Weather_Day 
               date={formattedDate || "Date"} 
-              temperature={day.main.temp} 
+              temperature={Math.round(day.main.temp)} 
               key={day.dt} 
+              icon={icon}
             />
           );
         })
@@ -25,5 +27,6 @@ const Weather_Days = () => {
     </section>
   );
 };
+
 
 export default Weather_Days;

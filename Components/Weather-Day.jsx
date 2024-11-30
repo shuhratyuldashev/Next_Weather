@@ -1,12 +1,12 @@
 import React from 'react'
 
-const Weather_Day = ({ date, temperature }) => {
+const Weather_Day = ({ date, temperature, icon }) => {
   return (
     <div className='weatherDay'>
         <p>{date}</p>
         <span>{temperature}°</span>
-        <div className="icon">*</div>
-    </div>
+        <img src={icon} alt="icon" />
+      </div>
   )
 }
 
